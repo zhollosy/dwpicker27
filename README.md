@@ -1,5 +1,5 @@
 
-# Dreamwall Picker
+# Dreamwall Picker (py27 maintenance)
 
 Animation picker for Audodesk Maya 2017 (or higher)
 
