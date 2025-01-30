@@ -1,6 +1,6 @@
 
 import sys
-from functools import partial, lru_cache
+from functools import partial
 from PySide2 import QtGui, QtCore, QtWidgets
 from dwpicker.compatibility import ensure_general_options_sanity
 from dwpicker.colorwheel import ColorDialog
@@ -13,8 +13,8 @@ from dwpicker.stack import count_splitters
 # don't use style sheet like that, find better design
 TOGGLER_STYLESHEET = (
     'background: rgb(0, 0, 0, 75); text-align: left; font: bold')
-X = '✘'
-V = '✔'
+X = u'\u2717' # for x
+V = u'\u2713' # for checkmark
 
 
 class BoolCombo(QtWidgets.QComboBox):
@@ -516,7 +516,6 @@ class ZoomLockedModel(QtCore.QAbstractTableModel):
                 return str(self.options['panels.names'][index.row()])
 
 
-@lru_cache()
 def get_color_icon(color, size=None, as_pixmap=False):
     px = QtGui.QPixmap(QtCore.QSize(*(size if size else (64, 64))))
     px.fill(QtCore.Qt.transparent)
