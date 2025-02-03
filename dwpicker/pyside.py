@@ -15,6 +15,6 @@ try:
 
     QtCore.Qt.BackgroundColorRole = QtCore.Qt.BackgroundRole
 
-except ModuleNotFoundError:
+except ImportError:
     from PySide2 import QtCore, QtGui, QtWidgets
     import shiboken2
